@@ -19,9 +19,42 @@
   box-sizing: border-box;
 }
 
+@font-face {
+    font-family: 'Manrope';
+    src: url('../assets/fonts/Manrope-Regular.ttf') format('truetype');
+    font-weight: 400; /* Normal */
+    font-style: normal;
+    
+}
+
+@font-face {
+    font-family: 'Manrope';
+    src: url('../assets/fonts/Manrope-Bold.ttf') format('truetype');
+    font-weight: 700; /* Bold */
+    font-style: normal;
+    
+}
+
+@font-face {
+    font-family: 'Space Mono';
+    src: url('./assets/fonts/SpaceMono-Regular.ttf') format('truetype');
+    font-weight: 400; /* Normal */
+    font-style: normal;
+    
+}
+
+@font-face {
+    font-family: 'Space Mono';
+    src: url('./assets/fonts/SpaceMono-Bold.ttf') format('truetype');
+    font-weight: 700; /* Bold */
+    font-style: normal;
+    
+}
+
+
 body {
   margin: 0;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: 'Manrope', sans-serif; /* Normal weight */
   font-weight: 400;
   font-size: 17px;
   line-height: 1.6;
@@ -33,6 +66,7 @@ h1,
 h2,
 h3,
 h4 {
+  font-family: 'Manrope', sans-serif; /* Bold weight */
   font-weight: 700;
   line-height: 1.2;
   margin: 0 0 16px;
@@ -406,7 +440,9 @@ img {
 
 .playbook-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+  /* grid-template-columns: repeat(3, 1fr); */
   gap: 28px;
 }
 
@@ -747,6 +783,14 @@ img {
 }
 
 @media (max-width: 768px) {
+
+  .nav-links {
+        display: flex;
+        flex-direction: column; /* Stack links vertically */
+        gap: 15px; /* Adjust gap for smaller screens */
+    }
+
+
   h1 {
     font-size: 40px;
   }
@@ -784,6 +828,19 @@ img {
 }
 
 @media (max-width: 480px) {
+
+  .playbook-grid {
+    display: block; /* Stack cards vertically */
+    width: 100%; /* Full width */
+    margin-bottom: 20px; /* Space between cards */
+  }
+
+  .nav-links {
+        display: flex;
+        flex-direction: column; /* Stack links vertically */
+    }
+
+    
   h1 {
     font-size: 34px;
   }
